@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Project</title>
+    <!--Styles-->
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="background-container">
+        <div id="search-container">
+            <div id="hero-container">
+                <h1>Book Search</h1>
+                <h2>Write to the input field which kind of book you want to read and we'll find you the best match to your search.</h2>
+            </div>
+            <div id="submit-container">
+                <form id="myForm" method="post">
+                    <input type="text" id="idInput" name="search" placeholder="Science, love, plants....">
+              
+                    <input id="get-button" type="submit" value="SUBMIT" formaction="/get-books">
+            
+                </form>
+            </div>
+        </div>
+        <div id="result-container" class="<%= books.length > 0 ? 'visible' : '' %>">
+            <ul id="result">
+                <% if (locals.books) { %>
+                    <% books.forEach(book => { %>
+                        <li>
+                            <p>Title: <%= book.title %> | </p> 
+                            <p>Author(s): <%= book.author_name %> | </p> 
+                            <p>Published Year: <%= book.publish_year %></p> 
+                        </li>
+                    <% }) %>
+                <% } else { %>
+                    <li>No books found for your search. Try a different keyword.</li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+
+
+</body>
+</html>
