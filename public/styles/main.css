@@ -27,7 +27,7 @@ body {
 }
 
 
-/*Search functions*/
+/*SEARCH PART*/
 
 #search-container {
     display: grid;
@@ -68,8 +68,6 @@ form {
 }
 
 
-/*FORM*/
-
 #idInput {
     border-radius: 50px;
     border: 1px solid rgb(0, 0, 0);
@@ -106,7 +104,7 @@ form {
 }
 
 #result-container.visible {
-    display: block; /* Show when the 'visible' class is added */
+    display: block; /* Show container when the 'visible' class is added */
 }
 
 p {

@@ -10,7 +10,7 @@ const API_URL = "https://openlibrary.org/search.json?q=";
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
-//So the public files are also included
+// Include public files
 app.use(express.static('public'));
 
 // Set EJS as the view engine
@@ -22,16 +22,15 @@ app.get("/", (req, res) => {
 
 // Function to get the data from API endpoint
 app.post("/get-books", async (req, res) => {
-    // title
-    // publish_year
-    // Muuttujaan inputista saatu tieto
+
     const searchWord = req.body.search;
 
     const config = {
-          headers: { "User-Agent": "AppForLearningAPI/1.0 emilia.paivarinta@hotmail.com" },
+          headers: { "User-Agent": "AppForLearningAPI/1.0 addYourEmailHere" },
     };
 
     try {
+
         const apiResponse = await axios.get(API_URL + searchWord, config);
 
         // Extract relevant details from the response
@@ -49,7 +48,7 @@ app.post("/get-books", async (req, res) => {
 
 })
 
-// 6. Listen on your predefined port and start the server.
+// Listen on your predefined port and start the server.
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
   });
