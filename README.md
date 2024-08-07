@@ -14,3 +14,14 @@ npm i
 nodemon index.js
 ```
 
+## Add your email to the header 
+
+1. Go to a file index.js
+2. Add your email to the header of the API request done with axios
+
+```
+    const config = {
+          headers: { "User-Agent": "AppForLearningAPI/1.0 addYourEmailHere" },
+    };
+```
+
